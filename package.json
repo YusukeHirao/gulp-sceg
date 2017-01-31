@@ -1,0 +1,18 @@
+{
+  "name": "gulp-sceg",
+  "version": "1.0.0",
+  "description": "sceg plugin for gulp",
+  "main": "index.js",
+  "repository": "git@github.com:YusukeHirao/gulp-sceg.git",
+  "author": "Yusuke Hirao <yusukehirao@me.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.14.1",
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "gulp-util": "^3.0.8",
+    "sceg": "^0.1.0-alpha",
+    "through2": "^2.0.3"
+  }
+}
