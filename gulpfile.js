@@ -5,7 +5,9 @@ const sceg = require('./');
 gulp.task('plugin-test', () => {
 	gulp
 		.src('./test/el/**/*')
-		.pipe(sceg())
+		.pipe(sceg({
+			layout: './test/layout/index.hbs',
+		}))
 		.pipe(gulp.dest('./test/dest'));
 });
 

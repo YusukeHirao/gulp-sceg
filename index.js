@@ -27,10 +27,10 @@ module.exports = function (options) {
 			cb();
 		},
 		(cb) => {
-			const data = sceg.optimize(elements); // for JSON
+			const data = sceg.optimize(config)(elements); // for JSON
 			switch (config.type) {
 				case 'html': {
-					sceg.render(data).then((html) => {
+					sceg.render(config)(data).then((html) => {
 						const output = new util.File({
 							base: path.resolve(),
 							path: path.resolve(`./${config.filename}`),
@@ -41,10 +41,11 @@ module.exports = function (options) {
 					return;
 				}
 				case 'json': {
+					const json = JSON.stringify(data, null, '\t');
 					const output = new util.File({
 						base: path.resolve(),
 						path: path.resolve(`./${config.filename}`),
-						contents: new Buffer(JSON.stringify(data, null, '\t')),
+						contents: new Buffer(json),
 					});
 					cb(null, output);
 					return;
