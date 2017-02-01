@@ -1728,9 +1728,9 @@ rx-lite@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-3.1.2.tgz#19ce502ca572665f3b647b10939f97fd1615f102"
 
-sceg@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/sceg/-/sceg-0.3.0.tgz#d3c273d9729e46da7b60a5c148139bd733c240cf"
+sceg@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/sceg/-/sceg-0.4.0.tgz#8d5f97d41c64154162c905ca91859d9e24133470"
   dependencies:
     "@types/mkdirp" "^0.3.29"
     glob "^7.1.1"
