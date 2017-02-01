@@ -1,6 +1,6 @@
 {
   "name": "gulp-sceg",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "sceg plugin for gulp",
   "main": "index.js",
   "repository": "git@github.com:YusukeHirao/gulp-sceg.git",

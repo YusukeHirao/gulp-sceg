@@ -3,7 +3,11 @@ gulp-sceg
 
 [![NPM version](https://badge.fury.io/js/gulp-sceg.svg)](http://badge.fury.io/js/gulp-sceg)
 
-Styled content elements guide. [sceg](https://www.npmjs.com/package/sceg) plugin for [gulp](https://www.npmjs.com/package/gulp).
+Styled content elements guide. [sceg](https://github.com/YusukeHirao/sceg) plugin for [gulp](https://github.com/gulpjs/gulp).
+
+## Sample
+
+[Element Guide (bootstrap sample)](https://yusukehirao.github.io/sceg/sample/)
 
 ## Uasge
 
