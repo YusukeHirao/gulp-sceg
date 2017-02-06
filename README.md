@@ -25,6 +25,7 @@ gulp.task('guide', function() {
       layout: './path/to/src/layout.pug', // Layout template (optional)
       filename: 'guide.html', // Output guide page file name (optional)
       type: 'html', // Output file format (optional 'html' or 'json')
+      data: { /* ... */ } // Custom data that is usable variables on layout template (optional)
     }))
     .pipe(gulp.dest('./path/to/dest/')); // Output guide page directory
 });
