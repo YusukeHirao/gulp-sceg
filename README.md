@@ -25,6 +25,7 @@ gulp.task('guide', function() {
       layout: './path/to/src/layout.pug', // Layout template (optional)
       filename: 'guide.html', // Output guide page file name (optional)
       type: 'html', // Output file format (optional 'html' or 'json')
+      pugOption, // pug options @see https://pugjs.org/api/reference.html#options
       data: { /* ... */ } // Custom data that is usable variables on layout template (optional)
     }))
     .pipe(gulp.dest('./path/to/dest/')); // Output guide page directory
@@ -117,16 +118,10 @@ element.classes(attr="val") Lorem ipsum dolor sit amet...
 ### handlebars
 
 ```mustache
-<link href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css" rel="stylesheet" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCoreRDark.min.css" rel="stylesheet" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeRDark.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
-<script>
-addEventListener('DOMContentLoaded', function() {
-  SyntaxHighlighter.all();
-});
-</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism-okaidia.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-markup.min.js"></script>
 {{#each contents}}
 <section>
   <h1><a id="{{category.id}}">{{category.name}}</a></h1>
@@ -136,7 +131,7 @@ addEventListener('DOMContentLoaded', function() {
     <h5>Preview</h5>
     {{{html}}}
     <h5>Code</h5>
-    <pre class="brush: html;">{{{html}}}</pre>
+    <pre class="language-markup"><code class="language-markup">{{html}}</code></pre>
     <small>
       {{{comment}}}
     </small>
@@ -149,15 +144,10 @@ addEventListener('DOMContentLoaded', function() {
 ### pug (jade)
 
 ```jade
-link(href='https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css', rel='stylesheet')
-link(href='https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCoreRDark.min.css', rel='stylesheet')
-link(href='https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeRDark.css', rel='stylesheet')
-script(src='https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js')
-script(src='https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js')
-script.
-  addEventListener('DOMContentLoaded', function() {
-    SyntaxHighlighter.all();
-  });
+link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css')
+link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism-okaidia.min.css')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-markup.min.js')
 each content, category in contents
   section
     h1
@@ -168,9 +158,9 @@ each content, category in contents
         h5 Preview
         !{el.html}
         h5 Code
-        pre(class='brush: html;') !{el.html}
+        pre.language-markup
+          code.language-markup el.html
         small !{el.comment}
-
 ```
 
 * * *
